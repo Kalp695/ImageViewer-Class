@@ -1,0 +1,10 @@
+-(void)showImage
+{
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+      imageInfo.image=[UIImage imageNamed:[NSString stringWithFormat:@"%@",[imagesName objectAtIndex:cuttentindex]]];
+    imageInfo.referenceView = self.view;
+    // Setup view controller
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]                                           initWithImageInfo:imageInfo mode:JTSImageViewControllerMode_Image                                       backgroundStyle:JTSImageViewControllerBackgroundOption_Blurred];
+    // Present the view controller.
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOffscreen];
+}
